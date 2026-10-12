@@ -92,7 +92,7 @@ export function mensajeError(e) {
 
 // ---------------- Acceso por código al correo ----------------
 export async function enviarCodigo(correo) {
-  const { error } = await supabase.auth.signInWithOtp({ email: correo, options: { shouldCreateUser: false, emailRedirectTo: new URL("app.html", location.href).href } });
+  const { error } = await supabase.auth.signInWithOtp({ email: correo, options: { shouldCreateUser: false, emailRedirectTo: location.href.split("#")[0] } });
   if (error) throw new Error(error.status === 429 ? "Demasiados intentos. Espere un minuto e intente de nuevo." : "No se pudo enviar el código. Verifique que su correo tenga una cuenta activa.");
 }
 
@@ -106,9 +106,9 @@ export function formularioAcceso(contenedor, alEntrar, subtitulo = "Ingrese el c
   const estado = h("div", { class: "oculto", role: "status", "aria-live": "polite" });
   const avisar = (tipo, t) => { estado.className = `mensaje ${tipo}`; estado.textContent = t; };
   const correo = h("input", { type: "email", id: "correo", autocomplete: "email", inputmode: "email", maxlength: "160", placeholder: "nombre@empresa.com" });
-  const codigo = h("input", { id: "codigo", inputmode: "numeric", autocomplete: "one-time-code", maxlength: "10", placeholder: "Código de 6 dígitos" });
+  const codigo = h("input", { id: "codigo", inputmode: "numeric", autocomplete: "one-time-code", maxlength: "10", placeholder: "Código (si le llegó uno)" });
   const pasoCodigo = h("div", { class: "oculto" },
-    h("label", { for: "codigo" }, "Escriba el código que llegó a su correo"), codigo,
+    h("label", { for: "codigo" }, "Abra el correo y toque «Iniciar sesión». Si el correo trae un código, escríbalo aquí"), codigo,
     h("button", { class: "boton oro ancho", style: "margin-top:14px", onclick: async (ev) => {
       const c = codigo.value.replace(/\D/g, "");
       if (c.length < 6) return avisar("error", "El código tiene al menos 6 dígitos.");
@@ -125,10 +125,10 @@ export function formularioAcceso(contenedor, alEntrar, subtitulo = "Ingrese el c
       const v = correo.value.trim().toLowerCase();
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) return avisar("error", "Escriba un correo válido.");
       ev.target.disabled = true;
-      try { await enviarCodigo(v); avisar("info", "Le enviamos un código. Revise también la carpeta de spam."); pasoCorreo.classList.add("oculto"); pasoCodigo.classList.remove("oculto"); codigo.focus(); }
+      try { await enviarCodigo(v); avisar("info", "Le enviamos un correo de acceso. Revise también la carpeta de spam."); pasoCorreo.classList.add("oculto"); pasoCodigo.classList.remove("oculto"); codigo.focus(); }
       catch (e) { avisar("error", e.message); }
       finally { ev.target.disabled = false; }
-    } }, "Enviarme un código"),
+    } }, "Enviarme el acceso"),
   );
   contenedor.replaceChildren(pasoCorreo, pasoCodigo, estado);
 }
