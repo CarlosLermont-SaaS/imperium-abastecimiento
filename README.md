@@ -3,7 +3,8 @@
 Producto de **Lermont Signature**. Software como servicio (SaaS) multiempresa y multinicho que vigila el inventario, usa IA para sugerir cuánto comprar y **exige la firma de un encargado humano** antes de crear cualquier orden de compra.
 
 - Sitio y app: https://carloslermont-saas.github.io/imperium-abastecimiento/
-- App (panel): `app.html` · Página de firma: `aprobar.html?a=<token>`
+- App (panel, con pestaña Manual paso a paso): `app.html` · Página de firma: `aprobar.html?a=<token>`
+- Páginas de venta: `venta-hotmart.html` y `venta-gumroad.html`
 - Backend: Supabase (proyecto `iyalcialszfmjdyueqnp`)
 
 ## Cómo funciona

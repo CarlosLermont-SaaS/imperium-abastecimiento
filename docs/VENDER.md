@@ -8,6 +8,12 @@ Cada plataforma avisa a IMPERIUM cuando alguien paga, renueva o cancela. IMPERIU
 `https://iyalcialszfmjdyueqnp.supabase.co/functions/v1/ventas-webhook?plataforma=PLATAFORMA&clave=SU_CLAVE`
 La clave se entrega por chat y no se publica aquí. Cambie `PLATAFORMA` por `gumroad`, `hotmart`, `polar`, `mercadopago` o `generica`.
 
+## Páginas de venta listas
+- Hotmart: https://carloslermont-saas.github.io/imperium-abastecimiento/venta-hotmart.html
+- Gumroad: https://carloslermont-saas.github.io/imperium-abastecimiento/venta-gumroad.html
+Cada página muestra solo los botones de su plataforma (los toma de `assets/config.js`).
+Acceso del comprador después de pagar: https://carloslermont-saas.github.io/imperium-abastecimiento/app.html
+
 ## Gumroad
 1. gumroad.com → New product → **Membership**. Nombre: `IMPERIUM`.
 2. Tiers: `Esencial` USD 29, `Profesional` USD 79, `Imperial` USD 199, cobro mensual.

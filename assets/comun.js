@@ -37,6 +37,7 @@ export function icono(nombre) {
     inventario: "M3 7l9-4 9 4-9 4-9-4Zm0 5 9 4 9-4M3 17l9 4 9-4",
     alertas: "M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6Zm-2 16a2 2 0 0 0 4 0",
     ordenes: "M6 3h9l4 4v14H6V3Zm9 0v4h4M9 12h7M9 16h7",
+    manual: "M4 5.5C6.5 4 9.5 4 12 6c2.5-2 5.5-2 8-.5V19c-2.5-1.5-5.5-1.5-8 .5-2.5-2-5.5-2-8-.5V5.5Zm8 .5v13.5",
     mas: "M5 12h.01M12 12h.01M19 12h.01",
   };
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");

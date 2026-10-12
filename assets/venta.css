@@ -1,0 +1,34 @@
+/* IMPERIUM · Páginas de venta (Hotmart y Gumroad) */
+.confianza { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--marfil-2); font-size: 1rem; }
+.confianza li { display: flex; align-items: center; gap: 8px; }
+.confianza li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--oro); flex: none; }
+
+.dolores { display: grid; gap: 0; border-top: 1px solid var(--linea); }
+.dolores article { padding: 18px 0; border-bottom: 1px solid var(--linea-suave); }
+.dolores h3 { font-size: 1.15rem; color: var(--oro-claro); }
+.dolores p { margin: 6px 0 0; color: var(--marfil-2); max-width: 60ch; }
+@media (min-width: 860px) { .dolores { grid-template-columns: repeat(3, 1fr); gap: 0 28px; border-top: 0; } .dolores article { border-top: 1px solid var(--linea); border-bottom: 0; } }
+
+.recorrido { margin: 18px 0 0; display: grid; gap: 0; border-top: 1px solid var(--linea); }
+.recorrido > div { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--linea-suave); }
+.recorrido dt { font-family: var(--display); color: var(--oro-claro); font-size: 1.1rem; letter-spacing: 0.06em; }
+.recorrido dd { margin: 0; color: var(--marfil-2); max-width: 70ch; }
+@media (min-width: 760px) { .recorrido > div { grid-template-columns: 11rem 1fr; gap: 24px; } }
+
+.pasos-cortos { counter-reset: corto; list-style: none; padding: 0; margin: 16px 0; }
+.pasos-cortos li { counter-increment: corto; position: relative; padding: 9px 0 9px 42px; border-bottom: 1px solid var(--linea-suave); color: var(--marfil-2); }
+.pasos-cortos li strong { color: var(--marfil); }
+.pasos-cortos li::before { content: counter(corto); position: absolute; left: 0; top: 8px; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--oro); color: var(--oro-claro); display: grid; place-items: center; font-family: var(--display); font-size: 0.9rem; }
+#nicho .nichos { margin-top: 10px; }
+
+.dos-columnas { display: grid; gap: 16px; margin-top: 14px; }
+@media (min-width: 820px) { .dos-columnas { grid-template-columns: 1fr 1fr; } }
+.dos-columnas .pasos-cortos { margin-bottom: 0; }
+
+.plan .chip { margin-bottom: 10px; }
+.plan > .tenue { margin: 4px 0 0; }
+.garantia .panel { border-color: var(--linea); background: linear-gradient(150deg, rgba(42, 75, 215, 0.22), rgba(20, 18, 28, 0.85) 50%, rgba(181, 101, 29, 0.22)); }
+.garantia .seccion { margin-bottom: 8px; }
+.cierre { text-align: center; padding-top: 10vh !important; }
+.cierre .titular { font-size: clamp(1.8rem, 5.6vw, 3.2rem); max-width: 20ch; margin: 0 auto; }
+.cierre .fila-botones { justify-content: center; }

@@ -1,8 +1,9 @@
 // =====================================================================
 // IMPERIUM · Aplicación (SPA sin compilación, segura por RLS)
-// Vistas: Panel · Inventario · Alertas · Órdenes · Más
+// Vistas: Panel · Inventario · Alertas · Órdenes · Manual · Más
 // =====================================================================
 import { CONFIG } from "./config.js";
+import { vistaManual } from "./manual.js";
 import { supabase, h, icono, num, dinero, fecha, restante, toast, mensajeError, formularioAcceso, monograma } from "./comun.js";
 
 const estado = { sesion: null, cuentas: [], cuenta: null, nichos: [], proveedores: [], pendientes: 0 };
@@ -87,6 +88,7 @@ const RUTAS = [
   { id: "inventario", nombre: "Inventario" },
   { id: "alertas", nombre: "Alertas" },
   { id: "ordenes", nombre: "Órdenes" },
+  { id: "manual", nombre: "Manual" },
   { id: "mas", nombre: "Más" },
 ];
 
@@ -120,7 +122,7 @@ async function enrutar() {
   const vista = document.getElementById("vista");
   if (!vista) return;
   vista.replaceChildren(h("p", { class: "tenue" }, "Cargando…"));
-  const pintar = { panel: vistaPanel, inventario: vistaInventario, alertas: vistaAlertas, ordenes: vistaOrdenes, mas: vistaMas }[ruta] ?? vistaPanel;
+  const pintar = { panel: vistaPanel, inventario: vistaInventario, alertas: vistaAlertas, ordenes: vistaOrdenes, manual: (v) => vistaManual(v, (r) => { location.hash = `#/${r}`; }), mas: vistaMas }[ruta] ?? vistaPanel;
   try { await pintar(vista); } catch (e) { vista.replaceChildren(h("div", { class: "mensaje error" }, mensajeError(e))); }
 }
 
@@ -166,7 +168,9 @@ async function vistaPanel(vista) {
   const primerosPasos = estado.nichos.length === 0 && esAdmin()
     ? h("div", { class: "panel pila" }, h("h2", {}, "Empecemos"),
         h("p", { class: "suave" }, "Cree el primer nicho de su negocio. Trae listos los datos que necesita cada tipo de producto y las reglas que usa la IA."),
-        h("a", { class: "boton oro", href: "#/mas", onclick: () => setTimeout(hojaNuevoNicho, 50) }, "Crear mi primer nicho"))
+        h("div", { class: "fila-botones" },
+          h("a", { class: "boton oro", href: "#/mas", onclick: () => setTimeout(hojaNuevoNicho, 50) }, "Crear mi primer nicho"),
+          h("a", { class: "boton", href: "#/manual" }, "Ver el manual paso a paso")))
     : null;
 
   vista.replaceChildren(h("div", { class: "pila" },

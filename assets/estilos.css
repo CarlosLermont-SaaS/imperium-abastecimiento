@@ -175,7 +175,7 @@ textarea { min-height: 84px; resize: vertical; }
 /* ---------- Navegación ---------- */
 .tabs {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(6, 1fr);
   height: calc(var(--barra) + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
   background: rgba(10, 9, 14, 0.94);
@@ -184,8 +184,9 @@ textarea { min-height: 84px; resize: vertical; }
 }
 .tabs a {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-  color: var(--marfil-3); text-decoration: none; font-size: 0.82rem;
+  color: var(--marfil-3); text-decoration: none; font-size: 0.74rem; min-width: 0;
 }
+@media (min-width: 420px) { .tabs a { font-size: 0.82rem; } }
 .tabs a svg { width: 22px; height: 22px; }
 .tabs a[aria-current="page"] { color: var(--oro-claro); }
 .tabs .punto { position: absolute; transform: translate(12px, -14px); min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--rubi); color: #fff; font-size: 0.72rem; line-height: 18px; text-align: center; font-family: Arial, sans-serif; }
@@ -287,3 +288,25 @@ dl.datos dd { text-align: right; font-weight: 600; }
 .acceso .encabezado p { color: var(--marfil-3); margin-top: 6px; }
 .lema { font-family: var(--texto); font-style: italic; color: var(--oro-claro); }
 .monograma-grande { width: 76px; height: 76px; display: block; margin: 0 auto 12px; }
+
+/* Manual de uso */
+.manual-progreso { height: 6px; border-radius: 3px; background: rgba(243, 236, 221, 0.08); overflow: hidden; }
+.manual-progreso > span { display: block; height: 100%; background: linear-gradient(90deg, var(--cobalto), var(--oro), var(--ambar)); transition: width 0.35s ease; }
+.manual-paso h2 { font-size: 1.5rem; }
+.manual-resumen { font-style: italic; color: var(--marfil-2); font-size: 1.12rem; margin-top: 6px; }
+.manual-sub { margin-top: 18px; color: var(--oro-claro); }
+.manual-toques { counter-reset: toque; list-style: none; padding: 0; margin: 12px 0; }
+.manual-toques li { counter-increment: toque; position: relative; padding: 9px 0 9px 42px; border-bottom: 1px solid var(--linea-suave); line-height: 1.45; }
+.manual-toques li::before { content: counter(toque); position: absolute; left: 0; top: 8px; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--oro); color: var(--oro-claro); display: grid; place-items: center; font-family: var(--display); font-size: 0.9rem; }
+.manual-campos { margin: 12px 0; }
+.manual-campos dt { color: var(--oro-claro); font-weight: 600; margin-top: 12px; }
+.manual-campos dd { margin: 2px 0 0; color: var(--marfil-2); padding-bottom: 10px; border-bottom: 1px solid var(--linea-suave); }
+.manual-ejemplo { padding: 12px 14px; border-radius: var(--radio-sm); background: rgba(42, 75, 215, 0.1); border-left: 3px solid var(--cobalto); }
+.manual-paso blockquote { margin: 14px 0; font-style: italic; }
+.manual-instalar { margin: 14px 0 4px; }
+.manual-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.manual-indice summary { cursor: pointer; color: var(--oro-claro); padding: 8px 0; }
+.manual-indice ol { padding-left: 1.4em; margin: 6px 0 0; }
+.manual-indice li { margin: 2px 0; }
+.manual-indice button { background: none; border: 0; color: var(--marfil-2); text-align: left; padding: 8px 0; cursor: pointer; font-size: 1.02rem; min-height: 40px; }
+.manual-indice button[aria-current="step"] { color: var(--oro-claro); font-weight: 600; }

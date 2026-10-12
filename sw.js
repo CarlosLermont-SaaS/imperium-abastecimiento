@@ -1,8 +1,8 @@
 // IMPERIUM · Service worker: guarda la interfaz para abrir rápido; los datos siempre van en vivo.
-const VERSION = "imperium-v3";
+const VERSION = "imperium-v4";
 const ARCHIVOS = ["./", "./index.html", "./app.html", "./aprobar.html", "./assets/estilos.css", "./assets/inicio.css",
   "./assets/app.js", "./assets/comun.js", "./assets/config.js", "./assets/aprobar.js", "./assets/inicio.js", "./assets/pwa.js",
-  "./assets/icono.svg", "./manifest.webmanifest"];
+  "./assets/icono.svg", "./assets/manual.js", "./assets/venta.css", "./assets/venta.js", "./manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(ARCHIVOS)).then(() => self.skipWaiting()));
