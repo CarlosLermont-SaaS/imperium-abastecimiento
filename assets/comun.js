@@ -92,7 +92,7 @@ export function mensajeError(e) {
 
 // ---------------- Acceso por código al correo ----------------
 export async function enviarCodigo(correo) {
-  const { error } = await supabase.auth.signInWithOtp({ email: correo, options: { shouldCreateUser: false } });
+  const { error } = await supabase.auth.signInWithOtp({ email: correo, options: { shouldCreateUser: false, emailRedirectTo: new URL("app.html", location.href).href } });
   if (error) throw new Error(error.status === 429 ? "Demasiados intentos. Espere un minuto e intente de nuevo." : "No se pudo enviar el código. Verifique que su correo tenga una cuenta activa.");
 }
 
