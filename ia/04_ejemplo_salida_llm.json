@@ -1,0 +1,10 @@
+{
+  "predicciones": [
+    {
+      "producto_id": "cccccccc-0000-0000-0000-000000000001",
+      "cantidad_a_reordenar": 96,
+      "fecha_sugerida_pedido": "2026-10-12",
+      "factor_justificacion_nicho": "[VENCIMIENTO] Demanda 34/sem (+18% tendencia). Bajo mínimo: pedir hoy. Cobertura 21 días por vida útil, no 30: 96 und (16 lotes de 6) evitan merma; no se alcanza el máximo de 120."
+    }
+  ]
+}

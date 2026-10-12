@@ -1,0 +1,49 @@
+/* IMPERIUM · Página de inicio y venta */
+.barra-inicio { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo .marca { font-size: 1.2rem; letter-spacing: 0.24em; }
+.enlaces-inicio { display: flex; align-items: center; gap: 18px; }
+.enlaces-inicio a:not(.boton) { color: var(--marfil-2); text-decoration: none; display: none; }
+@media (min-width: 720px) { .enlaces-inicio a:not(.boton) { display: inline; } }
+
+.portada { padding: 9vh 0 10vh; max-width: 860px; }
+.firma { font-family: var(--texto); font-style: italic; color: var(--oro-claro); font-size: 1.15rem; margin-bottom: 18px; }
+.titular { font-size: clamp(2.2rem, 7.4vw, 4.6rem); letter-spacing: 0.02em; line-height: 1.08; }
+.bajada { font-size: 1.25rem; color: var(--marfil-2); max-width: 62ch; margin: 22px 0 8px; }
+
+section.contenedor { padding: 7vh 0 0; }
+.seccion { font-size: clamp(1.5rem, 3.6vw, 2.1rem); margin-bottom: 18px; max-width: 24ch; }
+
+.pasos { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; counter-reset: paso; border-top: 1px solid var(--linea); }
+.pasos li { counter-increment: paso; display: grid; grid-template-columns: 3.2rem 1fr; gap: 4px 14px; padding: 20px 0; border-bottom: 1px solid var(--linea-suave); }
+.pasos li::before { content: counter(paso, upper-roman); grid-row: span 2; font-family: var(--display); font-size: 1.6rem; color: var(--oro); line-height: 1.1; }
+.pasos h3 { font-size: 1.2rem; }
+.pasos p { margin: 0; color: var(--marfil-2); max-width: 64ch; }
+@media (min-width: 900px) { .pasos { grid-template-columns: repeat(4, 1fr); gap: 0 28px; border-top: 0; } .pasos li { grid-template-columns: 1fr; border-top: 1px solid var(--linea); border-bottom: 0; } .pasos li::before { grid-row: auto; } }
+
+.sello-demo { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 860px) { .sello-demo { grid-template-columns: 1.1fr 0.9fr; } }
+.muestra { max-width: 380px; text-align: center; padding: 28px 24px; border-color: var(--linea); }
+.muestra .cifra { font-family: var(--display); font-size: 2.2rem; margin: 6px 0; }
+.sello.falso { display: grid; place-items: center; margin-top: 18px; cursor: default; }
+
+.nichos { list-style: none; padding: 0; margin: 0; columns: 1; column-gap: 32px; }
+.nichos li { break-inside: avoid; padding: 10px 0; border-bottom: 1px solid var(--linea-suave); color: var(--marfil-2); }
+.nichos strong { color: var(--marfil); display: block; font-weight: 600; }
+@media (min-width: 800px) { .nichos { columns: 2; } }
+
+.planes { display: grid; gap: 18px; margin-top: 10px; }
+@media (min-width: 900px) { .planes { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+.plan { padding: 24px 22px; border-radius: var(--radio); border: 1px solid var(--linea-suave); background: var(--superficie); backdrop-filter: blur(12px); }
+.plan.destacado { border: 1px solid var(--oro); background: linear-gradient(160deg, rgba(42, 75, 215, 0.28), rgba(20, 18, 28, 0.85) 45%, rgba(58, 42, 8, 0.45)); }
+.plan h3 { font-size: 1.35rem; }
+.precio { margin: 10px 0 14px; color: var(--marfil-2); }
+.precio span { font-family: var(--display); font-size: 2.1rem; color: var(--marfil); }
+.plan ul { padding-left: 1.1em; margin: 0 0 18px; color: var(--marfil-2); }
+.plan li { margin: 4px 0; }
+.comprar { display: grid; gap: 8px; }
+
+.preguntas details { border-bottom: 1px solid var(--linea-suave); padding: 14px 0; }
+.preguntas summary { cursor: pointer; font-weight: 600; font-size: 1.1rem; }
+.preguntas details p { color: var(--marfil-2); margin: 10px 0 0; max-width: 70ch; }
+.pie { padding: 8vh 0 6vh; text-align: center; }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08070B">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<title>IMPERIUM · Abastecimiento inteligente con autorización humana</title>
+<meta name="description" content="IMPERIUM detecta cuándo se le acaba la mercancía, la IA calcula cuánto pedir y su encargado firma la compra desde el celular. Para tiendas, restaurantes, farmacias, moda y más.">
+<meta property="og:title" content="IMPERIUM · Abastecimiento inteligente">
+<meta property="og:description" content="Nunca más se quede sin mercancía, y nunca una compra sin su firma.">
+<meta property="og:image" content="assets/icono-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/estilos.css">
+<link rel="stylesheet" href="assets/inicio.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+
+<header class="contenedor barra-inicio">
+  <a class="logo" href="./"><img src="assets/icono.svg" alt="" width="34" height="34"><span class="marca dorado">IMPERIUM</span></a>
+  <nav class="enlaces-inicio"><a href="#como">Cómo funciona</a><a href="#planes">Planes</a><a class="boton chico" href="app.html">Entrar</a></nav>
+</header>
+
+<main>
+  <section class="contenedor portada">
+    <p class="firma">Lermont Signature</p>
+    <h1 class="titular dorado">Nunca más sin mercancía. Nunca una compra sin su firma.</h1>
+    <p class="bajada">IMPERIUM vigila su inventario, la IA calcula cuánto pedir según sus ventas y la temporada, y su encargado autoriza la compra desde el celular. Sin firma, no se compra nada.</p>
+    <div class="fila-botones"><a class="boton oro" href="#planes">Ver planes</a><a class="boton" href="app.html">Ya tengo cuenta</a></div>
+  </section>
+
+  <section class="contenedor" id="como">
+    <h2 class="seccion">Del aviso a la compra en cuatro pasos</h2>
+    <ol class="pasos">
+      <li><h3>Detecta</h3><p>Cada venta descuenta el stock. Al tocar el mínimo, IMPERIUM abre una alerta con un plazo de 7 días.</p></li>
+      <li><h3>Calcula</h3><p>La IA mira sus ventas de las últimas semanas, la temporada en Colombia y las reglas de su negocio, y sugiere la cantidad exacta.</p></li>
+      <li><h3>Avisa</h3><p>El encargado del área recibe WhatsApp y correo con un enlace firmado y personal.</p></li>
+      <li><h3>Usted firma</h3><p>Verifica lo que falta y autoriza. Al día 7 nace la orden de compra. Sin autorización, la compra se bloquea sola.</p></li>
+    </ol>
+  </section>
+
+  <section class="contenedor sello-demo">
+    <div>
+      <h2 class="seccion">La IA sugiere. Usted decide.</h2>
+      <p class="suave">Ni la IA, ni las automatizaciones, ni nadie fuera de su equipo puede crear una compra. Esa regla vive dentro de la base de datos, no en una promesa: cada firma queda registrada con nombre, fecha y hora.</p>
+    </div>
+    <div class="panel muestra" aria-hidden="true">
+      <p class="tenue">Vela aromática Imperial · Hogar</p>
+      <p class="cifra num">54 unidades</p>
+      <p class="tenue">6 d 23 h para decidir</p>
+      <div class="sello falso">Firmar y autorizar</div>
+    </div>
+  </section>
+
+  <section class="contenedor">
+    <h2 class="seccion">Hecho para su tipo de negocio</h2>
+    <p class="suave">Cada nicho trae listos los datos que importan y las reglas que sigue la IA.</p>
+    <ul class="nichos">
+      <li><strong>Alimentos y bebidas</strong> vencimiento y lote; la IA evita pedir más de lo que alcanza a venderse.</li>
+      <li><strong>Moda y calzado</strong> talla, color y temporada; no repone colecciones que salen.</li>
+      <li><strong>Farmacia y droguería</strong> lote, vencimiento y registro INVIMA.</li>
+      <li><strong>Restaurantes</strong> insumos de rotación diaria con frescura primero.</li>
+      <li><strong>Ferretería</strong> referencias técnicas y medidas.</li>
+      <li><strong>Tecnología</strong> modelos y riesgo de obsolescencia.</li>
+      <li><strong>Cosmética, hogar, mascotas y autopartes</strong> con sus propias reglas.</li>
+    </ul>
+  </section>
+
+  <section class="contenedor" id="planes">
+    <h2 class="seccion">Planes</h2>
+    <p class="suave">Pago mensual. Cancele cuando quiera. Su cuenta se activa sola al pagar: entra con su correo, sin contraseñas.</p>
+    <div class="planes">
+      <article class="plan">
+        <h3>Esencial</h3>
+        <p class="precio num"><span>USD 29</span> al mes</p>
+        <ul><li>1 nicho</li><li>Hasta 150 productos</li><li>3 usuarios</li><li>Alertas por correo</li><li>Firma de compras en el celular</li></ul>
+        <div class="comprar" data-plan="esencial"></div>
+      </article>
+      <article class="plan destacado">
+        <h3>Profesional</h3>
+        <p class="precio num"><span>USD 79</span> al mes</p>
+        <ul><li>5 nichos</li><li>Hasta 2.000 productos</li><li>15 usuarios</li><li>IA de predicción de demanda</li><li>Alertas por WhatsApp y correo</li></ul>
+        <div class="comprar" data-plan="profesional"></div>
+      </article>
+      <article class="plan">
+        <h3>Imperial</h3>
+        <p class="precio num"><span>USD 199</span> al mes</p>
+        <ul><li>Nichos ilimitados</li><li>Productos ilimitados</li><li>Usuarios ilimitados</li><li>IA y WhatsApp incluidos</li><li>Acompañamiento de configuración</li></ul>
+        <div class="comprar" data-plan="imperial"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contenedor preguntas">
+    <h2 class="seccion">Preguntas frecuentes</h2>
+    <details><summary>¿Necesito computador?</summary><p>No. IMPERIUM funciona completo desde el navegador del celular y se instala como app en la pantalla de inicio.</p></details>
+    <details><summary>¿La IA puede comprar sola?</summary><p>No. La IA solo sugiere cantidades. La base de datos rechaza cualquier compra que no tenga la firma de un encargado de su empresa.</p></details>
+    <details><summary>¿Qué pasa si no autorizo a tiempo?</summary><p>Pasados 7 días sin firma, la compra queda bloqueada. Si el producto sigue bajo el mínimo, la siguiente venta abre una alerta nueva.</p></details>
+    <details><summary>¿Mis datos están separados de otras empresas?</summary><p>Sí. Cada empresa y cada nicho están aislados dentro de la base de datos: un encargado solo ve lo que le corresponde.</p></details>
+    <details><summary>¿Cómo cancelo?</summary><p>Desde la plataforma donde compró. Conserva el acceso hasta el final del periodo pagado.</p></details>
+  </section>
+</main>
+
+<footer class="contenedor pie">
+  <p class="lema">La Firma de la Herencia</p>
+  <p class="tenue">IMPERIUM es un producto de Lermont Signature · Medellín, Colombia · <a id="soporte" href="#">Soporte</a></p>
+</footer>
+<script type="module" src="assets/inicio.js"></script>
+</body>
+</html>

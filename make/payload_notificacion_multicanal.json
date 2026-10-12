@@ -1,0 +1,110 @@
+{
+  "evento": "abastecimiento.pendiente_aprobacion",
+  "version": "1.0",
+  "id_evento": "5f0c2a8e-9a51-4c1b-8f3e-2b7d9e1c4a60",
+  "idempotency_key": "db46b9d1-7e8c-439c-998c-32082ae62a8e:7e1d2c3b-0000-4000-8000-000000000001",
+  "emitido_en": "2026-10-12T18:35:40.112Z",
+  "texto_obligatorio": "La IA ha detectado baja disponibilidad de mercancía. Se requiere su total atención y ejecución con eficiencia para verificar que lo solicitado sea lo que realmente falta. La ejecución automática se realizará en 7 días si cuenta con su autorización manual.",
+  "alerta": {
+    "control_id": "db46b9d1-7e8c-439c-998c-32082ae62a8e",
+    "empresa": {
+      "id": "aaaaaaaa-0000-0000-0000-000000000001",
+      "nombre": "Empresa Demo"
+    },
+    "nicho": {
+      "id": "aaaaaaaa-0000-0000-0000-0000000000a1",
+      "nombre": "Alimentos"
+    },
+    "producto": {
+      "id": "cccccccc-0000-0000-0000-000000000001",
+      "sku": "LECHE-1",
+      "nombre": "Leche deslactosada 1L",
+      "unidad": "unidad"
+    },
+    "nivel": "minimo",
+    "cantidad_sugerida": 96,
+    "fuente_cantidad": "ia",
+    "fecha_deteccion": "2026-10-12T18:35:34.459Z",
+    "fecha_ejecucion_programada": "2026-10-19T18:35:34.459Z",
+    "url_aprobacion": "https://TU-DOMINIO/aprobar.html?a=a4022965-3c42-4587-a6e7-6e5fa7be5b37.jCmiP0b2DXmHKYqU33jAoADgoMj2onfNyEx6W0Rx4To"
+  },
+  "destinatario": {
+    "asignacion_id": "7e1d2c3b-0000-4000-8000-000000000001",
+    "nombre": "Ana Gómez",
+    "rol": "encargado",
+    "email": "ana@empresa.co",
+    "whatsapp_e164": "+573001112233"
+  },
+  "canales": {
+    "whatsapp": true,
+    "email": true
+  },
+  "whatsapp_payload": {
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "573001112233",
+    "type": "template",
+    "template": {
+      "name": "alerta_abastecimiento_aprobacion",
+      "language": {
+        "code": "es"
+      },
+      "components": [
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "Ana Gómez"
+            },
+            {
+              "type": "text",
+              "text": "Leche deslactosada 1L (LECHE-1)"
+            },
+            {
+              "type": "text",
+              "text": "Alimentos"
+            },
+            {
+              "type": "text",
+              "text": "96 unidad"
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "sub_type": "url",
+          "index": "0",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "a4022965-3c42-4587-a6e7-6e5fa7be5b37.jCmiP0b2DXmHKYqU33jAoADgoMj2onfNyEx6W0Rx4To"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "email_payload": {
+    "from": "Abastecimiento <alertas@tudominio.com>",
+    "to": [
+      "ana@empresa.co"
+    ],
+    "subject": "[Autorización requerida] Leche deslactosada 1L · 96 unidad",
+    "html": "<!DOCTYPE html>\n<html lang=\"es\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<meta name=\"color-scheme\" content=\"light only\"><title>Autorización de abastecimiento</title></head>\n<body style=\"margin:0;padding:0;background:#F2F4F7;font-family:Arial,Helvetica,sans-serif;color:#101828;\">\n<div style=\"display:none;max-height:0;overflow:hidden;\">Se requiere su autorización: Leche deslactosada 1L · 96 unidad</div>\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:#F2F4F7;\">\n<tr><td align=\"center\" style=\"padding:24px 12px;\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:560px;background:#FFFFFF;border-radius:12px;overflow:hidden;border:1px solid #EAECF0;\">\n  <tr><td style=\"background:#101828;padding:20px 24px;\">\n    <p style=\"margin:0;font-size:12px;letter-spacing:1.5px;color:#D0D5DD;\">ABASTECIMIENTO AUTOMÁTICO</p>\n    <p style=\"margin:6px 0 0;font-size:20px;font-weight:bold;color:#FFFFFF;\">Autorización requerida</p>\n  </td></tr>\n  <tr><td style=\"padding:20px 24px 0;\">\n    <span style=\"display:inline-block;padding:4px 10px;border-radius:999px;background:#B54708;color:#FFFFFF;font-size:12px;font-weight:bold;\">STOCK MÍNIMO</span>\n    <p style=\"margin:16px 0 0;font-size:16px;\">Hola Ana Gómez,</p>\n    <p style=\"margin:12px 0 0;font-size:15px;line-height:1.55;padding:14px 16px;background:#FFFAEB;border-left:4px solid #F79009;border-radius:6px;\">La IA ha detectado baja disponibilidad de mercancía. Se requiere su total atención y ejecución con eficiencia para verificar que lo solicitado sea lo que realmente falta. La ejecución automática se realizará en 7 días si cuenta con su autorización manual.</p>\n  </td></tr>\n  <tr><td style=\"padding:16px 24px 0;\">\n    <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-collapse:collapse;font-size:14px;\">\n      <tr><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;color:#475467;width:44%;\">Producto</td><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;font-weight:bold;text-align:right;\">Leche deslactosada 1L</td></tr>\n      <tr><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;color:#475467;width:44%;\">SKU</td><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;font-weight:bold;text-align:right;\">LECHE-1</td></tr>\n      <tr><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;color:#475467;width:44%;\">Nicho</td><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;font-weight:bold;text-align:right;\">Alimentos</td></tr>\n      <tr><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;color:#475467;width:44%;\">Stock actual / mínimo</td><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;font-weight:bold;text-align:right;\">15 / 20 unidad</td></tr>\n      <tr><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;color:#475467;width:44%;\">Cantidad sugerida</td><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;font-weight:bold;text-align:right;\">96 unidad</td></tr>\n      <tr><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;color:#475467;width:44%;\">Costo estimado</td><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;font-weight:bold;text-align:right;\">$ 336.000</td></tr>\n      <tr><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;color:#475467;width:44%;\">Ejecución programada</td><td style=\"padding:9px 0;border-bottom:1px solid #EAECF0;font-weight:bold;text-align:right;\">lunes, 19 de octubre de 2026, 01:35 p. m.</td></tr>\n    </table>\n    <p style=\"margin:14px 0 0;font-size:13px;line-height:1.5;color:#475467;\"><strong>Análisis de la IA:</strong> [VENCIMIENTO] Demanda 34/sem (+18% tendencia). Bajo mínimo: pedir hoy. Cobertura 21 días por vida útil.</p>\n  </td></tr>\n  <tr><td align=\"center\" style=\"padding:24px;\">\n    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\" style=\"max-width:360px;\">\n      <tr><td align=\"center\" bgcolor=\"#039855\" style=\"border-radius:10px;\">\n        <a href=\"https://TU-DOMINIO/aprobar.html?a=a4022965-3c42-4587-a6e7-6e5fa7be5b37.jCmiP0b2DXmHKYqU33jAoADgoMj2onfNyEx6W0Rx4To\" target=\"_blank\" rel=\"noopener\" style=\"display:block;padding:16px 20px;font-size:17px;font-weight:bold;color:#FFFFFF;text-decoration:none;border-radius:10px;\">&#128274; Revisar y autorizar de forma segura</a>\n      </td></tr>\n    </table>\n    <p style=\"margin:12px 0 0;font-size:12px;color:#667085;line-height:1.5;\">Deberá iniciar sesión con su cuenta. Si no autoriza antes de la fecha programada, la compra quedará bloqueada automáticamente.</p>\n  </td></tr>\n  <tr><td style=\"padding:0 24px 20px;\">\n    <p style=\"margin:0;font-size:11px;color:#98A2B3;line-height:1.5;word-break:break-all;\">Si el botón no funciona copie este enlace en su navegador:<br>https://TU-DOMINIO/aprobar.html?a=a4022965-3c42-4587-a6e7-6e5fa7be5b37.jCmiP0b2DXmHKYqU33jAoADgoMj2onfNyEx6W0Rx4To</p>\n    <p style=\"margin:10px 0 0;font-size:11px;color:#98A2B3;\">Referencia: db46b9d1-7e8c-439c-998c-32082ae62a8e · Este enlace es personal e intransferible.</p>\n  </td></tr>\n</table>\n</td></tr></table>\n</body></html>",
+    "text": "Hola Ana Gómez,\n\nLa IA ha detectado baja disponibilidad de mercancía. Se requiere su total atención y ejecución con eficiencia para verificar que lo solicitado sea lo que realmente falta. La ejecución automática se realizará en 7 días si cuenta con su autorización manual.\n\nProducto: Leche deslactosada 1L\nSKU: LECHE-1\nNicho: Alimentos\nStock actual / mínimo: 15 / 20 unidad\nCantidad sugerida: 96 unidad\nCosto estimado: $ 336.000\nEjecución programada: lunes, 19 de octubre de 2026, 01:35 p. m.\nAnálisis de la IA: [VENCIMIENTO] Demanda 34/sem (+18% tendencia). Bajo mínimo: pedir hoy. Cobertura 21 días por vida útil.\n\nRevisar y autorizar: https://TU-DOMINIO/aprobar.html?a=a4022965-3c42-4587-a6e7-6e5fa7be5b37.jCmiP0b2DXmHKYqU33jAoADgoMj2onfNyEx6W0Rx4To\nReferencia: db46b9d1-7e8c-439c-998c-32082ae62a8e",
+    "headers": {
+      "X-Entity-Ref-ID": "db46b9d1-7e8c-439c-998c-32082ae62a8e"
+    },
+    "tags": [
+      {
+        "name": "tipo",
+        "value": "abastecimiento"
+      },
+      {
+        "name": "nivel",
+        "value": "minimo"
+      }
+    ]
+  }
+}

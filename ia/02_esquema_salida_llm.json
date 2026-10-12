@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "predicciones"
+  ],
+  "properties": {
+    "predicciones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "producto_id",
+          "cantidad_a_reordenar",
+          "fecha_sugerida_pedido",
+          "factor_justificacion_nicho"
+        ],
+        "properties": {
+          "producto_id": {
+            "type": "string",
+            "description": "UUID exacto del producto recibido"
+          },
+          "cantidad_a_reordenar": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Unidades a pedir, múltiplo del lote mínimo; 0 si no se requiere"
+          },
+          "fecha_sugerida_pedido": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "Fecha AAAA-MM-DD para emitir el pedido"
+          },
+          "factor_justificacion_nicho": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "[ETIQUETA] justificación con cifras clave"
+          }
+        }
+      }
+    }
+  }
+}

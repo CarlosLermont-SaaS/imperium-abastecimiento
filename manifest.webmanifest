@@ -1,0 +1,17 @@
+{
+  "name": "IMPERIUM · Abastecimiento Inteligente",
+  "short_name": "IMPERIUM",
+  "description": "Abastecimiento automático multinicho con autorización humana. Lermont Signature.",
+  "lang": "es",
+  "start_url": "./app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#08070B",
+  "theme_color": "#08070B",
+  "icons": [
+    { "src": "assets/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/icono.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

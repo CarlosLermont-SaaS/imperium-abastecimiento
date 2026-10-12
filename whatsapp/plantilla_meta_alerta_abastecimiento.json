@@ -1,0 +1,35 @@
+{
+  "_instrucciones": "Crear UNA vez en Meta: WhatsApp Manager > Plantillas de mensajes > Crear plantilla (categoría Utilidad, idioma Español), copiando estos textos. O por API: POST https://graph.facebook.com/v21.0/{WABA_ID}/message_templates con este cuerpo (sin los campos que empiezan con _). Reemplace TU-DOMINIO por la URL donde publique aprobar.html.",
+  "name": "alerta_abastecimiento_aprobacion",
+  "language": "es",
+  "category": "UTILITY",
+  "components": [
+    {
+      "type": "HEADER",
+      "format": "TEXT",
+      "text": "Alerta de abastecimiento"
+    },
+    {
+      "type": "BODY",
+      "text": "Hola {{1}}. Producto: {{2}}. Nicho: {{3}}. Cantidad sugerida: {{4}}.\n\nLa IA ha detectado baja disponibilidad de mercancía. Se requiere su total atención y ejecución con eficiencia para verificar que lo solicitado sea lo que realmente falta. La ejecución automática se realizará en 7 días si cuenta con su autorización manual.",
+      "example": {
+        "body_text": [["Ana", "Leche deslactosada 1L (LECHE-1)", "Alimentos", "108 unidad"]]
+      }
+    },
+    {
+      "type": "FOOTER",
+      "text": "Solo usted puede autorizar esta compra"
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "URL",
+          "text": "Revisar y autorizar",
+          "url": "https://TU-DOMINIO/aprobar.html?a={{1}}",
+          "example": ["https://TU-DOMINIO/aprobar.html?a=a4022965-3c42-4587-a6e7-6e5fa7be5b37.jCmiP0b2DXmHKYqU33jAoADgoMj2onfNyEx6W0Rx4To"]
+        }
+      ]
+    }
+  ]
+}
